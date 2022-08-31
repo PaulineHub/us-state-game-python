@@ -5,7 +5,7 @@ screen = turtle.Screen()
 screen.title("U.S. States Game")
 screen.setup(width=800, height=600)
 # Background image
-image = "/home/pauline/projets/python/python_bootcamp/25-us-states-game/us-states-game/blank_states_img.gif"
+image = "blank_states_img.gif"
 # need .bgpic() AND .addshape() for the background to work !
 screen.bgpic(image)
 screen.addshape(image)
@@ -13,8 +13,7 @@ screen.addshape(image)
 turtle.shape(image)
 
 """ Reaching datas """
-data = pandas.read_csv("25-us-states-game/us-states-game/50_states.csv")
-print(data)
+data = pandas.read_csv("50_states.csv")
 data_list = data["state"].tolist()
 states_to_learn_list = data_list
 
@@ -47,7 +46,7 @@ def already_guessed(guess):
 def create_dataframe_states_to_learn():
     data_dict = {"state": states_to_learn_list}
     data = pandas.DataFrame(data_dict)
-    data.to_csv("25-us-states-game/us-states-game/states_to_learn.csv")
+    data.to_csv("states_to_learn.csv")
 
 
 while len(correct_guesses) < 50:
@@ -69,8 +68,3 @@ while len(correct_guesses) < 50:
         break
 
 
-
-# !!! IMPORTANT How to keep window open on click !!!
-# to have .mainloop() or exitonclick() or a screen.textinput() for the window to work and open 
-#turtle.mainloop()
-#screen.exitonclick()
