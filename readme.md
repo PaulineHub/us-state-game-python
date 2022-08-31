@@ -1,4 +1,4 @@
-# Snake Game
+# USA States Quiz Game
 
 ### Replit page
 
